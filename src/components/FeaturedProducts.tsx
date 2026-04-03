@@ -6,9 +6,21 @@ import Image from "next/image";
 import { Star, ShoppingCart, Plus, Minus, Heart } from "lucide-react";
 import { products } from "@/data/mock";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/lib/cart-context";
+import Link from "next/link";
 
 export default function FeaturedProducts() {
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState("All");
+  const { addToCart } = useCart();
+
+  const filteredProducts = products.filter((p) => {
+    if (activeTab === "All") return true;
+    if (activeTab === "Pharmacy") return p.isPharmacy;
+    if (activeTab === "Groceries") return p.category === "Groceries" || p.category === "Fresh Produce";
+    if (activeTab === "Essentials") return p.category === "Personal Care" || p.category === "Household";
+    return p.category === activeTab;
+  }).slice(0, 4);
 
   return (
     <section className="py-24 bg-background">
@@ -27,9 +39,10 @@ export default function FeaturedProducts() {
             {["All", "Pharmacy", "Groceries", "Essentials"].map((tab) => (
               <button
                 key={tab}
+                onClick={() => setActiveTab(tab)}
                 className={cn(
                   "px-6 py-2 rounded-lg text-sm font-bold transition-all",
-                  tab === "All" ? "bg-white dark:bg-black shadow-sm" : "hover:bg-muted-foreground/10"
+                  activeTab === tab ? "bg-white dark:bg-black shadow-sm" : "hover:bg-muted-foreground/10"
                 )}
               >
                 {tab}
@@ -39,7 +52,7 @@ export default function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -86,7 +99,10 @@ export default function FeaturedProducts() {
                       exit={{ y: 20, opacity: 0 }}
                       className="absolute bottom-4 left-4 right-4 flex items-center justify-center"
                     >
-                      <button className="w-full h-12 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] transition-all active:scale-95">
+                      <button 
+                        onClick={() => addToCart(product)}
+                        className="w-full h-12 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] transition-all active:scale-95"
+                      >
                         <Plus className="w-5 h-5" />
                         Quick Add
                       </button>
@@ -126,7 +142,10 @@ export default function FeaturedProducts() {
                     </span>
                   </div>
                   
-                  <button className="w-12 h-12 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg hover:rotate-12 transition-all">
+                  <button 
+                    onClick={() => addToCart(product)}
+                    className="w-12 h-12 bg-secondary text-white rounded-2xl flex items-center justify-center shadow-lg hover:rotate-12 transition-all"
+                  >
                     <ShoppingCart className="w-6 h-6" />
                   </button>
                 </div>
@@ -137,10 +156,10 @@ export default function FeaturedProducts() {
 
         {/* Load More Button */}
         <div className="mt-16 text-center">
-            <button className="h-14 px-10 bg-muted hover:bg-muted-foreground/10 text-foreground rounded-2xl font-bold transition-all inline-flex items-center gap-2">
+            <Link href="/shop" className="h-14 px-10 bg-muted hover:bg-muted-foreground/10 text-foreground rounded-2xl font-bold transition-all inline-flex items-center gap-2">
                 Explore All Products
                 <Plus className="w-5 h-5" />
-            </button>
+            </Link>
         </div>
       </div>
     </section>

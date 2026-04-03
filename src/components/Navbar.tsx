@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ShoppingCart, Moon, Sun, Menu, X, Pill } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/lib/cart-context";
 
 const NavLinks = [
   { name: "Home", href: "/" },
@@ -21,6 +22,7 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { cartCount } = useCart();
 
   useEffect(() => {
     setMounted(true);
@@ -71,7 +73,7 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-4">
             {/* Search Bar - Desktop */}
-            <div className="hidden lg:flex items-center bg-muted/50 rounded-full px-4 py-1.5 border border-transparent focus-within:border-primary transition-all">
+            <div className="hidden lg:flex items-center bg-muted/50 rounded-full px-4 py-1.5 border border-transparent transition-all">
               <Search className="w-4 h-4 text-muted-foreground" />
               <input
                 type="text"
@@ -98,13 +100,15 @@ export default function Navbar() {
             {/* Cart Icon */}
             <Link href="/cart" className="relative p-2 rounded-full hover:bg-muted transition-colors">
               <ShoppingCart className="w-5 h-5" />
-              <motion.span
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"
-              >
-                3
-              </motion.span>
+              {cartCount > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"
+                >
+                  {cartCount}
+                </motion.span>
+              )}
             </Link>
 
             {/* Mobile Menu Toggle */}

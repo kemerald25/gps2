@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ShoppingCart, Pill, User, Coffee, Leaf, ArrowRight } from "lucide-react";
 import { categories } from "@/data/mock";
 import { cn } from "@/lib/utils";
@@ -27,43 +28,49 @@ export default function Categories() {
               and daily home essentials.
             </p>
           </div>
-          <button className="flex items-center gap-2 text-primary font-bold group hover:underline underline-offset-4">
+          <Link 
+            href="/shop" 
+            className="flex items-center gap-2 text-primary font-bold group hover:underline underline-offset-4"
+          >
             View All Categories
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {categories.map((category, index) => {
             const Icon = iconMap[category.icon as keyof typeof iconMap];
+            const href = category.name === "Pharmacy" ? "/pharmacy" : category.name === "Groceries" ? "/groceries" : `/shop?category=${category.name}`;
+            
             return (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group relative h-48 bg-card rounded-[32px] p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition-all cursor-pointer overflow-hidden border border-border"
-              >
-                {/* Background Decoration */}
-                <div 
-                  className="absolute -top-10 -right-10 w-24 h-24 rounded-full opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"
-                  style={{ backgroundColor: category.color }}
-                />
-
-                <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:rotate-[10deg]"
-                  style={{ backgroundColor: `${category.color}20`, color: category.color }}
+              <Link key={category.id} href={href}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group relative h-48 bg-card rounded-[32px] p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-xl transition-all cursor-pointer overflow-hidden border border-border"
                 >
-                  <Icon className="w-8 h-8" />
-                </div>
+                  {/* Background Decoration */}
+                  <div 
+                    className="absolute -top-10 -right-10 w-24 h-24 rounded-full opacity-10 blur-2xl group-hover:opacity-20 transition-opacity"
+                    style={{ backgroundColor: category.color }}
+                  />
 
-                <h3 className="font-heading font-bold text-lg group-hover:text-primary transition-colors">
-                  {category.name}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-1">120+ Products</p>
-              </motion.div>
+                  <div 
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform group-hover:rotate-[10deg]"
+                    style={{ backgroundColor: `${category.color}20`, color: category.color }}
+                  >
+                    <Icon className="w-8 h-8" />
+                  </div>
+
+                  <h3 className="font-heading font-bold text-lg group-hover:text-primary transition-colors">
+                    {category.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">120+ Products</p>
+                </motion.div>
+              </Link>
             );
           })}
         </div>

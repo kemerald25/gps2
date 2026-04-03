@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle, Truck, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -58,13 +59,13 @@ export default function Hero() {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row items-center gap-4"
             >
-              <button className="w-full sm:w-auto h-14 px-8 bg-primary text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-lg hover:shadow-primary/30">
+              <Link href="/shop" className="w-full sm:w-auto h-14 px-8 bg-primary text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-lg hover:shadow-primary/30">
                 Shop Now
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="w-full sm:w-auto h-14 px-8 bg-secondary/10 text-secondary border-2 border-secondary/20 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-secondary/20 transition-all">
+              </Link>
+              <Link href="/pharmacy" className="w-full sm:w-auto h-14 px-8 bg-secondary/10 text-secondary border-2 border-secondary/20 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-secondary/20 transition-all">
                 Upload Prescription
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
 

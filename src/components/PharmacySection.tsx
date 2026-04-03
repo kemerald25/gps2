@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Pill, Upload, MessageSquare, PhoneCall, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const pills = [
   { name: "Pain Relief", color: "bg-blue-500" },
@@ -57,7 +58,7 @@ export default function PharmacySection() {
 
             {/* CTA Buttons */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <button className="h-20 px-8 bg-secondary text-white rounded-[24px] font-bold flex items-center justify-between group overflow-hidden relative shadow-xl hover:shadow-secondary/30 transition-all">
+              <Link href="/pharmacy" className="h-20 px-8 bg-secondary text-white rounded-[24px] font-bold flex items-center justify-between group overflow-hidden relative shadow-xl hover:shadow-secondary/30 transition-all">
                 <div className="flex items-center gap-4 relative z-10">
                   <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
                     <Upload className="w-6 h-6" />
@@ -69,9 +70,9 @@ export default function PharmacySection() {
                 </div>
                 <ChevronRight className="w-6 h-6 transform group-hover:translate-x-2 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </button>
+              </Link>
 
-              <button className="h-20 px-8 bg-muted hover:bg-muted-foreground/10 text-foreground rounded-[24px] font-bold flex items-center justify-between group transition-all border border-border">
+              <Link href="/contact" className="h-20 px-8 bg-muted hover:bg-muted-foreground/10 text-foreground rounded-[24px] font-bold flex items-center justify-between group transition-all border border-border">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                     <MessageSquare className="w-6 h-6" />
@@ -82,7 +83,7 @@ export default function PharmacySection() {
                   </div>
                 </div>
                 <ChevronRight className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" />
-              </button>
+              </Link>
             </div>
             
             <div className="mt-12 flex items-center gap-6">
