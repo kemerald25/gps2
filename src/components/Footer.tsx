@@ -142,7 +142,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10">
           <p className="text-sm font-medium text-muted-foreground">
-            © {new Date().getFullYear()} GPS Mart & Pharmacy. All rights reserved. Built with ❤️ in Lagos.
+            © {new Date().getFullYear()} GPS Mart & Pharmacy. All rights reserved. Built with ❤️ by <a href="http://iamdevroyale.vercel.app" target="_blank" rel="noopener noreferrer">Dev Royale</a>.
           </p>
 
           <div className="flex items-center gap-4">
