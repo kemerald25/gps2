@@ -41,7 +41,7 @@ export default function AboutPage() {
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               We are a team of dedicated pharmacists, nutritionists, and logistics experts 
               working together to provide a seamless shopping experience. We understand that 
-              your health and time are precious, which is why we've built a platform that 
+              your health and time are precious, which is why we&apos;ve built a platform that 
               brings the store to you.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -84,7 +84,7 @@ export default function AboutPage() {
               { 
                 icon: Sparkles, 
                 title: "Quality Obsessed", 
-                description: "We don't settle for 'good enough'. We source the freshest produce and most effective medications available." 
+                description: "We don&apos;t settle for &apos;good enough&apos;. We source the freshest produce and most effective medications available." 
               },
               { 
                 icon: ShieldCheck, 

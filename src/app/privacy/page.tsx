@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Lock, Eye, FileCheck } from "lucide-react";
+import { Lock } from "lucide-react";
 
 export default function PrivacyPage() {
   return (

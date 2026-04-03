@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Search, ShoppingBag, Truck, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -56,7 +56,7 @@ export default function HowItWorks() {
             <span className="text-primary italic">3 Easy Steps</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            We've streamlined our process to ensure you get your groceries and 
+            We&apos;ve streamlined our process to ensure you get your groceries and 
             medications with maximum speed and minimum stress.
           </p>
         </div>

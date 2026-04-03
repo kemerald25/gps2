@@ -7,7 +7,6 @@ import { Star, ShoppingCart, Plus, Heart, Search, SlidersHorizontal } from "luci
 import { products } from "@/data/mock";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/lib/cart-context";
-import { Product } from "@/types";
 
 interface ProductGridProps {
   initialCategory?: string;
@@ -96,7 +95,7 @@ export default function ProductGrid({
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProducts.map((product, index) => (
+          {filteredProducts.map((product) => (
             <motion.div
               layout
               key={product.id}

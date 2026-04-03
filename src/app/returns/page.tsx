@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { RefreshCw, CheckCircle, XCircle } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 
 export default function ReturnsPage() {
   return (

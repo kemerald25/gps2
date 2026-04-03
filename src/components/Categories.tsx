@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ShoppingCart, Pill, User, Coffee, Leaf, ArrowRight } from "lucide-react";
 import { categories } from "@/data/mock";
-import { cn } from "@/lib/utils";
 
 const iconMap = {
   ShoppingCart,

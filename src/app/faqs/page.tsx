@@ -36,8 +36,8 @@ export default function FAQPage() {
             <h1 className="text-4xl md:text-6xl font-heading font-black">Frequently Asked <span className="text-foreground">Questions</span></h1>
           </div>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Everything you need to know about GPS Mart & Pharmacy. Can't find 
-            the answer you're looking for? Reach out to our support team.
+            Everything you need to know about GPS Mart & Pharmacy. Can&apos;t find 
+            the answer you&apos;re looking for? Reach out to our support team.
           </p>
         </div>
 

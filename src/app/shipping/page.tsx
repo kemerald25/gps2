@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Truck, Clock, MapPin } from "lucide-react";
+import { Truck } from "lucide-react";
 
 export default function ShippingPage() {
   return (

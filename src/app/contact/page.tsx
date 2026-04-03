@@ -27,8 +27,8 @@ export default function ContactPage() {
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Have questions about our products or services? We're here to help you 
-              every step of the way. Send us a message and we'll get back to you shortly.
+              Have questions about our products or services? We&apos;re here to help you 
+              every step of the way. Send us a message and we&apos;ll get back to you shortly.
             </p>
           </div>
 

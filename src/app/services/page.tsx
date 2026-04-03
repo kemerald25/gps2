@@ -45,7 +45,7 @@ export default function ServicesPage() {
              Comprehensive <span className="text-primary italic">Health</span> Solutions
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            GPS Mart & Pharmacy offers more than just shopping. We're your 
+            GPS Mart & Pharmacy offers more than just shopping. We&apos;re your 
             full-service health and lifestyle partner, providing technology-driven 
             services to keep you your best.
           </p>

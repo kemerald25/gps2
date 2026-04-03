@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Send, Pill, MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { Facebook, Twitter, Instagram, Linkedin } from "./icons/BrandIcons";
-import { cn } from "@/lib/utils";
 
 const footerLinks = [
   {
@@ -77,7 +75,7 @@ export default function Footer() {
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mt-3 font-medium">
-                We'll never share your email with third parties.
+                We&apos;ll never share your email with third parties.
               </p>
             </div>
           </div>

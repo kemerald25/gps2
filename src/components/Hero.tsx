@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle, Truck, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Hero() {

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Star, ShoppingCart, Plus, Minus, Heart } from "lucide-react";
+import { Star, ShoppingCart, Plus, Heart } from "lucide-react";
 import { products } from "@/data/mock";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/lib/cart-context";

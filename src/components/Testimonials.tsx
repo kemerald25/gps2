@@ -31,7 +31,7 @@ export default function Testimonials() {
             Hear From Our <span className="text-primary italic">Happy Customers</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Don't just take our word for it. Join thousands of satisfied Nigerians 
+            Don&apos;t just take our word for it. Join thousands of satisfied Nigerians 
             who trust GPS Mart for their daily essentials.
           </p>
         </div>

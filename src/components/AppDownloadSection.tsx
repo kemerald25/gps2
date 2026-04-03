@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Smartphone, Apple, PlayCircle, Star, ShieldCheck, Zap } from "lucide-react";
-import Image from "next/image";
 
 export default function AppDownloadSection() {
   return (
